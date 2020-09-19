@@ -24,8 +24,16 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    # @app.route('/hello')
+    # def hello():
+    #     return 'Hello, World!'
 
-    return app
+    # return app
+    def create_app():
+        app = ...
+        # existing code omitted
+
+        from . import db
+        db.init_app(app)
+
+        return app
